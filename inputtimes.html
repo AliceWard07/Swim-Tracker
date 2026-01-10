@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      background-image: url('https://static.vecteezy.com/system/resources/thumbnails/010/563/727/small/swimming-pool-top-view-olympic-pool-swimming-paths-dip-pool-top-view-vector.jpg');
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: black;
+      font-family: Helvetica;
+    }
+
+
+    .inputting_container {
+      position: absolute;
+      width: 1000px;
+      height: 1000px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0  ;          
+      margin: auto;
+      background-color: rgb(175, 224, 255);
+      border: 2px solid black;
+      border-radius: 8px;
+      padding: 30px 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 12px;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+
+
+    button:hover {
+      background: #cb6e6e;
+    }
+
+
+    .box {
+      align-self: center;
+      display: flex;
+      height: 80%;
+      width: 90%;
+      background-color: white;
+      margin-bottom: -60px;
+    }
+    nav {
+       position: fixed; /* always on top */
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: rgba(0, 0, 0, 0.8); /* semi-transparent black */
+       display: flex;
+       justify-content: center;
+       padding: 10px 0;
+       z-index: 1000;
+       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+   }
+
+    nav button {
+      background: white;
+      color: #007acc;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.2s;
+   }
+
+    nav button:hover {
+      background: #e0e0e0;
+    }
+    .table-container {
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    overflow-x: auto; /* horizontal scroll for small screens */
+}
+
+  </style>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input New Time</title>
+</head>
+<body>
+  <nav>
+      <button onclick="window.location.href='badges.html'">Badges</button>
+      <button onclick="window.location.href='ArchivesLC.html'">Archives LC</button>
+      <button onclick="window.location.href='PB.html'">Personal Best's</button>
+      <button onclick="window.location.href='inputtimes.html'">Input times</button>
+      <button onclick="window.location.href='logOut.html'">Log Out</button>
+      
+  </nav>
+  <div class="box">
+    <div class="inputting_container">
+      <h1>Input new time:</h1>
+
+
+      <!-- SINGLE CLEAN FORM -->
+      <form id="timeForm">
+
+        <h5>Choose Course Type:</h5>
+        <select id="courseType">
+          <option value="LC">Long Course (LC)</option>
+          <option value="SC">Short Course (SC)</option>
+        </select>
+
+        <h5>Choose Stroke:</h5>
+        <select id="stroke">
+          <option value="Butterfly">Butterfly</option>
+          <option value="Backstroke">Backstroke</option>
+          <option value="Breaststroke">Breaststroke</option>
+          <option value="Freestyle">Freestyle</option>
+        </select>
+
+
+        <h5>Choose Distance:</h5>
+        <select id="distance">
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="400">400</option>
+        </select>
+
+
+        <h5>Enter Time:</h5>
+        <input type="text" id="swimTime" placeholder="e.g. 28.32 or 1.02.45" required>
+
+
+        <h5>Enter Date:</h5>
+        <input type="date" id="swimDate" required>
+
+
+        <h5>Comments:</h5>
+        <input type="text" id="comments">
+        <div id="suggestion" style="margin-top:5px; font-weight:bold; color:blue;"></div>
+
+
+        <h5>Happiness Score (from 1 to 10): </h5>
+        <input type="number" id="happiness" min="1" max="10">
+
+
+        <button type="button" id="saveButton">Save Time</button>
+
+
+      </form>
+
+
+    </div>
+  </div>
+
+
+  <script src="inputtimes.js"></script>
+</body>
+</html>

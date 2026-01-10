@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Archives</title>
+
+<style>
+    body {
+        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/010/563/727/small/swimming-pool-top-view-olympic-pool-swimming-paths-dip-pool-top-view-vector.jpg');
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin:0;
+        padding:20px;
+        font-family: Helvetica;
+    }
+
+    .container {
+        background:white;
+        width:90%;
+        max-width:900px;
+        padding:20px;
+        border-radius:8px;
+        border:2px solid black;
+        margin-top:20px;
+    }
+
+    table {
+        width:100%;
+        border-collapse:collapse;
+        margin-top:15px;
+    }
+
+    th, td {
+        border:1px solid black;
+        padding:8px;
+        text-align:center;
+    }
+
+    h1 {
+        text-align:center;
+    }
+
+    .backButton, .actionButton, .sortButton, .exportButton {
+        padding:10px 20px;
+        background:black;
+        color:white;
+        font-size:14px;
+        cursor:pointer;
+        border-radius:8px;
+        border:none;
+        margin:3px;
+    }
+
+    .backButton:hover, .actionButton:hover, .sortButton:hover, .exportButton:hover {
+        background-color:#494949;
+    }
+
+    #trendAnalysis {
+        margin-top:10px;
+        font-weight:bold;
+        text-align:center;
+    }
+
+    /* Chart modal */
+    #chartModal {
+        display:none;
+        position:fixed;
+        top:0; left:0;
+        width:100%;
+        height:100%;
+        background-color: rgba(0,0,0,0.7);
+        justify-content:center;
+        align-items:center;
+    }
+
+    #chartModalContent {
+        background:white;
+        padding:20px;
+        border-radius:8px;
+        max-width:600px;
+        width:90%;
+    }
+</style>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<button class="backButton" onclick="goBack()">Back to Archives</button>
+
+<div class="container">
+    <h1 id="eventTitle">Event</h1>
+    <!-- Year Filter -->
+    <div style="text-align:center; margin:10px 0;">
+       <label for="yearFilter"><b>Filter by Year:</b></label>
+       <select id="yearFilter" style="padding:5px; font-size:14px;">
+        <!-- JS will auto-fill -->
+       </select>
+    </div>
+
+
+    <!-- Sorting and export -->
+    <div style="text-align:center; margin-top:10px;">
+        <button class="exportButton" onclick="exportCSV()">Export CSV</button>
+    </div>
+
+    <!-- Trend -->
+    <div id="trendAnalysis"></div>
+    <!-- Graph Buttons -->
+    <div style="margin-bottom: 15px; text-align:center;">
+      <button onclick="showChart('line')">Line Graph</button>
+      <button onclick="showChart('bar')">Bar Graph</button>
+      <button onclick="showChart('happiness')">Happiness Graph</button>
+    </div>
+
+
+
+    <table>
+        <thead>
+          <tr>
+            <th onclick="sortTable('date')" style="cursor:pointer;">Date</th>
+            <th onclick="sortTable('time')" style="cursor:pointer;">Time</th>
+            <th onclick="sortTable('happiness')" style="cursor:pointer;">Happiness</th>
+            <th>Comments</th>
+            <th>Actions</th>
+          </tr>
+       </thead>
+
+        <tbody id="eventTable">
+            <!-- JS fills entries -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Chart Modal -->
+<div id="chartModal">
+    <div id="chartModalContent">
+        <canvas id="eventChart"></canvas>
+        <div style="text-align:center; margin-top:10px;">
+            <button class="actionButton" onclick="closeChart()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script src="event.js"></script>
+</body>
+</html>
+
+

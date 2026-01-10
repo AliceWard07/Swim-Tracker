@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/010/563/727/small/swimming-pool-top-view-olympic-pool-swimming-paths-dip-pool-top-view-vector.jpg');
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin:0;
+  color: black;
+  font-family: Helvetica;
+}
+
+.signIn_container {
+  position: absolute;
+  background-color: rgb(175, 224, 255);
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 30px 40px;
+  width: 300px;
+  height: 315px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: black;
+  color:white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #494949;
+}
+
+h6 {
+  text-align: center;
+  margin: 0;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+i {
+  background: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  color: black;
+  font-size: large;
+}
+i:hover {
+  background: rgb(255, 122, 122);
+}
+</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+</head>
+
+<body>
+
+<a href="login.html"><i>Log In</i></a>
+
+<div class="signIn_container">
+  <h1>Sign Up</h1>
+
+  <form onsubmit="return false;">
+    <input type="text" id="Name" placeholder="Enter Name:" required>
+    <input type="text" id="Email" placeholder="Enter Email:" required>
+    <input type="password" id="Password" placeholder="Enter Password:" required>
+
+    <button type="button" id="Button">Sign Up</button>
+
+    <a href="login.html"><h6>Already have an account? Log In</h6></a>
+  </form>
+</div>
+
+<script src="javasignup.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log Out</title>
+
+<style>
+    body {
+        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/010/563/727/small/swimming-pool-top-view-olympic-pool-swimming-paths-dip-pool-top-view-vector.jpg');
+        background-size: cover;
+        background-position: center;
+        font-family: Helvetica;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .logout-container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    p {
+        margin-bottom: 20px;
+        color: #444;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #007acc;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #005fa3;
+    }
+    nav {
+       position: fixed; /* always on top */
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: rgba(0, 0, 0, 0.8); /* semi-transparent black */
+       display: flex;
+       justify-content: center;
+       padding: 10px 0;
+       z-index: 1000;
+       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+   }
+
+    nav button {
+      background: white;
+      color: #007acc;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.2s;
+   }
+
+    nav button:hover {
+      background: #e0e0e0;
+    }
+    .table-container {
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    overflow-x: auto; /* horizontal scroll for small screens */
+}
+</style>
+
+</head>
+
+<body>
+    <nav>
+      <button onclick="window.location.href='badges.html'">Badges</button>
+      <button onclick="window.location.href='ArchivesLC.html'">Archives LC</button>
+      <button onclick="window.location.href='PB.html'">Personal Best's</button>
+      <button onclick="window.location.href='inputtimes.html'">Input times</button>
+      <button onclick="window.location.href='logOut.html'">Log Out</button>
+      
+  </nav>
+
+<div class="logout-container">
+    <h2>Ready to Log Out?</h2>
+    <p>You will be returned to the login page.</p>
+    <button onclick="confirmLogout()">Log Out</button>
+</div>
+
+<script src="logout.js"></script>
+</body>
+</html>
+
